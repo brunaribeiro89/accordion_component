@@ -18,12 +18,14 @@ export default function Accordion({items=[],activeIndex, onChangeActiveIndex }:P
 
   return (
 
-   <div className='w-1/2 mx-auto bg-white shadow-md rounded-md' >
-    {items.map((item, index)=>
-    (
-      <AccordionItem accordionisActive={activeIndex == index } {...item}   onClickAccordion={()=> onChangeActiveIndex(index)}/>
-    ))}
+ 
+   <div className='flex flex-col w-1/2 mx-auto bg-white shadow-md rounded-md'>
+      {items.map((item, index) => (
+        <AccordionItem key={index} accordionisActive={activeIndex == index} {...item} onClickAccordion={() => onChangeActiveIndex(index)} />
+      ))}  
     </div>
+   
+
 
    
   )
